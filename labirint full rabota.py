@@ -10,7 +10,7 @@ spisok =[['#', 'o', '#', '*', '*', '*', '#', '#', '#', '#'],
          ['#', '#', '#', '#', '#', '#', '#', '#', '#', '*'],
          ['#', '*', '*', '*', '*', '*', '*', '*', '*', '*'],
          ['#', '*', '#', '#', '#', '#', '#', '#', '#', '#']]
-print('список каманд : печаить-Распечатать Список, d-Право, a-Лево, w-Верх, s-Вниз,Телепорт на X и Y Лбиринта телепорт только на *')  
+print('список каманд : печаить-Распечатать Список, d-Право, a-Лево, w-Верх, s-Вниз,Телепорт на X и Y Лабиринта телепорт только на *')  
 print('другие команды не работают только эти !!!!!! ☝☝☝☝')
 k= input('Введите команду')
 while True:
@@ -29,7 +29,7 @@ while True:
             spisok[a][g+1]= 'o'
             spisok[a][g]='*'
             
-    if k=='a':
+    elif k=='a':
         for stroka in range(len(spisok)):
             for stolb in range(len(spisok)):
                 if spisok[stroka][stolb] == "o":
@@ -42,7 +42,7 @@ while True:
             spisok[a][g-1]= 'o'
             spisok[a][g]='*'
         
-    if k=='s':
+    elif k=='s':
         for stroka in range(len(spisok)):
             for stolb in range(len(spisok)):
                 if spisok[stroka][stolb] == "o":
@@ -55,7 +55,7 @@ while True:
             spisok[a+1][g]= 'o'
             spisok[a][g]='*'
         
-    if k=='w':
+    elif k=='w':
         for stroka in range(len(spisok)):
              for stolb in range(len(spisok)):
                  if spisok[stroka][stolb] == "o":
@@ -70,13 +70,13 @@ while True:
         
         
             
-    if k=="печать":
+    elif k=="печать":
         for stroka in spisok:
             for stolb in stroka:
                 print(stolb, end="")
             print()
     
-    if k == "телепорт":
+    elif k == "телепорт":
         r = int (input('какой номер строки ?'))
         s = int (input('какая цифра столбца ?'))
         while (r>10 or r<0) and (s>10 or s<0):
@@ -99,7 +99,9 @@ while True:
                     g = stolb
         spisok[a][g]='*'
         spisok[r-1][s-1]='o'
-     
-        k = input('введите  команду')
+
     else:
         print('нет таких команд')
+        k = input('введите  команду')
+    
+    k = input('введите  команду')
